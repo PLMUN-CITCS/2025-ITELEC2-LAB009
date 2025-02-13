@@ -99,12 +99,12 @@ Only perform this if this is the first time you will setup your Git Environment
    **Notable Observations (to be discussed after completing the exercise):**
    - The code inside the if statement block only executes if the condition is True.
    - Indentation is crucial in Python. It defines the code block associated with the if statement. Incorrect indentation will lead to errors.
-   - The > operator is used for "greater than" comparison. Other comparison operators include: 
-      - < (less than)
-      - >= (greater than or equal to)
-      - <= (less than or equal to)
-      - == (equal to)
-      - != (not equal to)
+   - The `>` operator is used for "greater than" comparison. Other comparison operators include: 
+      - `<` (less than)
+      - `>=` (greater than or equal to)
+      - `<=` (less than or equal to)
+      - `==` (equal to)
+      - `!=` (not equal to)
    - Variables can be used in the condition. This makes the if statement dynamic.
 
    **Python Best Practices**
