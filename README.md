@@ -116,7 +116,7 @@ Only perform this if this is the first time you will setup your Git Environment
    **Step-by-Step Instructions:**
 
    1. Setting up: Open your preferred Python environment or Text Editor, and create a Python Script.
-      - Required Filename: `if_statement_basic.py`
+      - Required Filename: `if_else_statement.py`
       
    2.  Get input from the user:
       - Use the input() function to prompt the user to enter a number. Store the returned string in a variable.
