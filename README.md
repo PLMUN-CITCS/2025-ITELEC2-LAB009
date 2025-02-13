@@ -1,7 +1,7 @@
-# 2025-ITELEC2-LAB008
+# 2025-ITELEC2-LAB009
 Week 04 - Conditional Statements
 
-Laboratory # 08 - Guided Coding Exercise: Simple if Statement in Python
+Laboratory # 09 - Guided Coding Exercise: if...else Statement in Python
 
 ## **Instructions**
 
@@ -77,79 +77,83 @@ Only perform this if this is the first time you will setup your Git Environment
 
 ### **Step 3: Complete the Assignment**
 
-**Laboratory # 08 - Guided Coding Exercise: Simple if Statement in Python**
+**Laboratory # 09 - Guided Coding Exercise: if...else Statement in Python**
 
    **Objective:**
-   - Understand the syntax and structure of a basic if statement.
-   - Learn how a condition controls the execution of a code block.
-   - Practice using comparison operators in conditional statements.
-   - Understand the importance of indentation in Python.
+   - Learn how to handle binary decisions using if...else.
+   - Understand how the else block executes when the if condition is false.
+   - Practice using the modulus operator (%) for determining even and odd numbers.
+   - Reinforce input handling and type conversion.
 
    **Desired Output (Example 1):**
    ```bash
-   It's a hot day!
+   Enter a number: 10
+   The number 10 is Even.
    
    ```
 
-   **Desired Output (Example 2):***(No output)*
+   **Desired Output (Example 1):**
+   ```bash
+   Enter a number: 7
+   The number 7 is Odd.
    
-   - (Example 1) - If temperature is greater than 30.
-   - (Example 2) - If temperature is 30 or less.
+   ```
       
    **Notable Observations (to be discussed after completing the exercise):**
-   - The code inside the if statement block only executes if the condition is True.
-   - Indentation is crucial in Python. It defines the code block associated with the if statement. Incorrect indentation will lead to errors.
-   - The `>` operator is used for "greater than" comparison. Other comparison operators include: 
-      - `<` (less than)
-      - `>=` (greater than or equal to)
-      - `<=` (less than or equal to)
-      - `==` (equal to)
-      - `!=` (not equal to)
-   - Variables can be used in the condition. This makes the if statement dynamic.
+   - The if block executes only when the condition is True.
+   - The else block executes only when the condition is False.
+   - The modulus operator (%) returns the remainder of a division. If a number is divisible by 2 (remainder is 0), it's even; otherwise, it's odd.
+   - if...else provides a way to handle two mutually exclusive cases.
 
    **Python Best Practices**
-   - Descriptive Variable Names: Use clear and descriptive variable names (e.g., temperature instead of t). This improves code readability.
-   - Comments: Add comments to explain your code's logic, especially for more complex conditions.
-   - Consistent Indentation: Maintain consistent indentation (4 spaces per level is the recommended standard in Python). This is essential for Python's syntax.
-   - Meaningful Conditions: Write conditions that are clear and easy to understand.
-   - Test Thoroughly: Test your code with different inputs to ensure it behaves as expected in various scenarios (e.g., when the condition is true and when it's false).
+   - Input Validation (Recommended): While not explicitly in the original prompt, it's good practice to validate user input. You could use a try-except block to handle cases where the user enters something that's not an integer. This prevents your program from crashing.
+   - Descriptive Messages: Use clear and descriptive messages in your print() statements to guide the user and explain the output.
+   - Clear Variable Names: Use meaningful variable names (e.g., number instead of n).
+   - Comments: Add comments to explain your logic, especially for more complex conditions.
+   - Consistent Indentation: Maintain consistent indentation (4 spaces per level is standard).
+   - Test Thoroughly: Test your code with different inputs (even and odd numbers, positive and negative numbers, and potentially non-integer inputs if you include validation) to ensure it works correctly in all cases.
 
    **Step-by-Step Instructions:**
 
    1. Setting up: Open your preferred Python environment or Text Editor, and create a Python Script.
       - Required Filename: `if_statement_basic.py`
       
-   2.  Define a variable:
-      - Create a variable named temperature. Assign it a numeric value (e.g., 35). You can change this value later to test different scenarios.
+   2.  Get input from the user:
+      - Use the input() function to prompt the user to enter a number. Store the returned string in a variable.
 ```python
-temperature = 35  # Or any other number
+user_input = input("Enter a number: ")
 ```
       
-   3.  Write an if statement:
-      - Use the if keyword followed by a condition. The condition should check if temperature is greater than 30. End the line with a colon (:).
+   3.  Convert input to an integer:
+      - Convert the input string to an integer using the int() function. Store the result in a variable named number.
 ```python
-if temperature > 30:
+number = int(user_input)
 ```
 
-   4. Print a message (indented)
-      - On the next line, indented, write the code that you want to execute if the condition is true. In this case, print the message "It's a hot day!". Make sure the indentation is consistent (4 spaces).
+   4. Check if the number is even or odd (using if...else):
+      - Use an if statement to check if the number is even. The condition should use the modulus operator (%) to check if the remainder when dividing by 2 is 0.
+      - If the condition is true (even), print a message indicating that the number is even.
+      - Use an else block to handle the case where the condition is false (odd). Print a message indicating that the number is odd.
 ```python
-    print("It's a hot day!")  # Indented 4 spaces
+if number % 2 == 0:
+    print("The number", number, "is Even.")
+else:
+    print("The number", number, "is Odd.")
 ```
 
    5. Complete Code: Combine the steps above to form the complete program.
-
    6. Run the code: Execute your Python code.
-   7. Observe the output: 
-      - If temperature is greater than 30, you should see the message printed.
-      - If temperature is 30 or less, nothing will be printed.
-     
-   8. Experiment: Change the value of temperature and run the code again. Try values greater than 30 and values less than or equal to 30. Observe the different outputs.
-
-   9. Try other comparison operators: Change the > operator to other comparison operators (e.g., <, >=, <=, ==, !=) and see how the program's behavior changes. For example, try: if temperature <= 30:
+   7. Observe the output: Enter different numbers (even and odd) and observe the output.
+   8. (Optional) Input Validation:  Add a try-except block to handle potential ValueError if the user enters non-integer input.
+```python
+try:
+    #code here
+except ValueError:
+    print("Invalid input. Please enter an integer.")
+```
 
    **Conclusion**
-   This exercise introduced the fundamental concept of the if statement in Python. You learned how to write a simple if statement, how a condition controls the execution of code, and the importance of indentation. You also practiced using comparison operators and following Python best practices. The if statement is a powerful tool for creating programs that can make decisions based on different conditions. This is a building block for more complex control flow structures you'll learn later.
+   This exercise demonstrated the use of the if...else statement to handle binary decisions. You learned how the else block provides an alternative execution path when the if condition is false. You also practiced using the modulus operator for determining even and odd numbers and (optionally) improved the program's robustness by adding input validation. The if...else statement is a fundamental control flow structure that allows your programs to make choices and handle different scenarios.
 
 ### **Step 4: Push Changes to GitHub**
 Once you've completed your changes, follow these steps to upload your work to your GitHub repository.
@@ -173,7 +177,7 @@ git add .
    Write a meaningful commit message:
    
 ```bash
-git commit -m "Submitting Python Week 04 - Laboratory # 08"
+git commit -m "Submitting Python Week 04 - Laboratory # 09"
 ```
    
 4. Push your changes to GitHub:
